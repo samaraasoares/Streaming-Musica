@@ -1,10 +1,9 @@
-
 public class StreamingMusica {
     public static void main(String[] args) {
-        
-        Musica m1 = new Musica("Equalize", "Pity", 320, "Rock");
+
+        Musica m1 = new Musica("Equalize", "Pitty", 320, "Rock");
         Musica m2 = new Musica("Billie Jean", "Michael Jackson", 294, "Pop");
-        Musica m3 = new Musica("Mulher de fases", "raimundos", 230, "Rock");
+        Musica m3 = new Musica("Mulher de Fases", "Raimundos", 230, "Rock");
 
         Playlist minhaPlaylist = new Playlist("Favoritas da Samara");
 
@@ -18,7 +17,7 @@ public class StreamingMusica {
         System.out.println("=== SISTEMA DE STREAMING ===");
         System.out.println("Usuário: " + usuario.getNome());
         System.out.println("Playlist: " + minhaPlaylist.getNome());
-        System.out.println("---------------------------");
+        System.out.println("----------------------------");
 
         for (Musica m : minhaPlaylist.getMusicas()) {
             m.exibir(); 
