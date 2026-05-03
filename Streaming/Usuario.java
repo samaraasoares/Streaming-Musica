@@ -27,16 +27,27 @@ public class Usuario {
         }
     }
 
+    public final String getNome() { 
+        return nome; 
+    }
+    
+    public void setNome(String nome) { 
+        if (nome != null) this.nome = nome.trim(); 
+    }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { if (nome != null) this.nome = nome.trim(); }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { if (email != null) this.email = email.trim(); }
+    public final String getEmail() { 
+        return email; 
+    }
+    
+    public void setEmail(String email) { 
+        if (email != null) this.email = email.trim(); 
+    }
 
     public void adicionarPlaylist(Playlist playlist) {
         if (playlist != null) this.playlists.add(playlist);
     }
 
-    public List<Playlist> getPlaylists() { return playlists; }
+    public final List<Playlist> getPlaylists() { 
+        return playlists; 
+    }
 }
