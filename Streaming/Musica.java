@@ -73,4 +73,11 @@ public class Musica {
         int segundos = this.duracaoSegundos % 60;
         return String.format("%02d:%02d", minutos, segundos);
     }
+
+    public void reproduzir() {
+    System.out.println("🎵 Reproduzindo playlist: " + nome);
+    for (Musica m : musicas) {
+        System.out.println("  ▶ " + m.getTitulo());
+    }
+}
 }
