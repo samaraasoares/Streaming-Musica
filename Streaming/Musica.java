@@ -21,7 +21,7 @@ public class Musica {
     public void setGenero(String genero) { this.genero = genero; }
 
     public void exibir() {
-        System.out.println(" " + titulo + " - " + artista + " [" + getDuracaoFormatada() + "]");
+        System.out.println(" " + titulo + " - " + artista + " [" + getDuracaoFormatada() + "] (" + genero + ")");
     }
 
     public String getDuracaoFormatada() {
