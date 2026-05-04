@@ -6,8 +6,8 @@ public class Usuario {
     protected String email; 
     protected List<Playlist> playlists;
     protected List<Musica> historicoReproducao;
-    
-    public static int totalReproducoesSistema = 0;
+
+    public static int totalReproducoesSistema = 0; 
 
     public Usuario(String nome, String email) {
         this.nome = nome;
@@ -17,8 +17,9 @@ public class Usuario {
     }
 
     public void reproduzirMusica(Musica musica) {
-        System.out.println(" Reproduzindo: " + musica.getTitulo());
+        System.out.println("Reproduzindo: " + musica.getTitulo());
         historicoReproducao.add(musica);
+
         totalReproducoesSistema++; 
     }
 
