@@ -1,31 +1,32 @@
 public class UsuarioFree extends Usuario {
-    private int contadorReproducoesLocal;
-    public static int totalAnunciosExibidos = 0; 
+    private int contadorReproducoes;
     private static final int MAX_PLAYLISTS = 3;
 
     public UsuarioFree(String nome, String email) {
         super(nome, email);
-        this.contadorReproducoesLocal = 0;
+        this.contadorReproducoes = 0;
     }
 
     @Override
     public void reproduzirMusica(Musica musica) {
-        contadorReproducoesLocal++;
-        if (contadorReproducoesLocal % 3 == 0) {
+        contadorReproducoes++;
+        
+        if (contadorReproducoes % 3 == 0) {
             exibirAnuncio(); 
         }
+        
         super.reproduzirMusica(musica); 
     }
 
     private void exibirAnuncio() {
-        System.out.println("\n [ANÚNCIO] Assine o Premium para ouvir sem interrupções!");
-        totalAnunciosExibidos++;
+        System.out.println("\n[ANÚNCIO] Assine o Premium para ouvir sem interrupções! \n");
     }
 
     @Override
     public void adicionarPlaylist(Playlist playlist) {
+        // Verifica o limite de polimorfismo/regras de negócio: máximo 3 playlists
         if (playlists.size() >= MAX_PLAYLISTS) {
-            System.out.println(" Limite de 3 playlists atingido para conta Free!");
+            System.out.println(" Limite de playlists atingido!");
         } else {
             super.adicionarPlaylist(playlist);
         }
