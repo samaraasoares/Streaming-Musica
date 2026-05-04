@@ -4,28 +4,24 @@ public class PlaylistAutomatica extends Playlist {
     private String criterio; 
 
     public PlaylistAutomatica(String nome, String criterio) {
-        super(nome);
+        super(nome, "Playlist gerada automaticamente por gênero: " + criterio);
         this.criterio = criterio;
     }
 
     @Override
     public void reproduzir() {
         System.out.println(" [Playlist Automática via Algoritmo]");
-        System.out.println(" Critério de seleção: " + this.criterio);
         super.reproduzir();
     }
 
-    public void atualizar(ArrayList<Musica> todasMusicas) {
+    public void atualizar(ArrayList<Musica> bancoDeMusicas) {
         this.musicas.clear();
-        System.out.println(" Atualizando playlist '" + this.nome + "' baseada em: " + criterio);
-        
-        if (todasMusicas.size() >= 2) {
-            this.adicionarMusica(todasMusicas.get(0));
-            this.adicionarMusica(todasMusicas.get(1));
-        }
-    }
+        for (Musica m : bancoDeMusicas) {
 
-    public String getCriterio() {
-        return criterio;
+            if (m.getGenero().equalsIgnoreCase(this.criterio)) {
+                this.adicionarMusica(m);
+            }
+        }
+        System.out.println("Atualizada: " + this.musicas.size() + " músicas de '" + criterio + "' encontradas.");
     }
 }
