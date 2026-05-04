@@ -24,7 +24,7 @@ public class UsuarioFree extends Usuario {
 
     @Override
     public void adicionarPlaylist(Playlist playlist) {
-        // Verifica o limite de polimorfismo/regras de negócio: máximo 3 playlists
+
         if (playlists.size() >= MAX_PLAYLISTS) {
             System.out.println(" Limite de playlists atingido!");
         } else {
