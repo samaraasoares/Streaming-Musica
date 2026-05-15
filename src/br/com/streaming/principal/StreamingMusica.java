@@ -46,7 +46,7 @@ public class StreamingMusica {
         String tempoFormatado = FormatadorTempo.formatar(m1.getDuracaoTotal());
         System.out.println("Duração de '" + m1.getTitulo() + "': " + tempoFormatado);
 
-        System.out.println("\n--- ESTATÍSTICAS DO SISTEMA ---");
+        System.out.println("\n--- ESTATISTICAS DO SISTEMA ---");
 
         System.out.println("Total Global de Reproduções: " + Usuario.getTotalReproducoesSistema());
         System.out.println("Total de Anúncios Exibidos: " + UsuarioFree.totalAnunciosExibidos);
